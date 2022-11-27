@@ -14,3 +14,28 @@ Plugins assist Jenkins in achieving Continuous Integration. DevOps stages can be
 - There are two ways to define syntax:
   - Syntax
   - Declarative
+
+#### Example
+
+```bash
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                //
+            }
+        }
+        stage('Test') {
+            steps {
+                //
+            }
+        }
+        stage('Deploy') {
+            steps {
+                //
+            }
+        }
+    }
+}
+```
