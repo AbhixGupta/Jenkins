@@ -39,3 +39,52 @@ pipeline {
     }
 }
 ```
+
+## Jenkins Installation:
+
+#### Prerequisite
+
+- Java, JRE, JDK
+- Any Operating System
+
+#### Steps
+
+1. Login into the AWS EC2 console and launch one Linux mahcine (ubuntu or red hat). Make sure to add seperate security group which have ssh enabled on port 22 with source is your Ip. Add Custom TCP port enabled on 8080 with source is your Ip.
+2. Add Tags.
+3. Create Key-Pairs.
+4. Login to the Jenkins server (can use Putty, MobaXterm, terminal).
+
+```bash
+ssh -i /Downloads/jenk.pem ubuntu@145.45.45.6
+```
+
+4. Install the required configuration
+
+```bash
+sudo add-apt repository ppa:openjdk -r/ppa
+sudo apt update
+sudo apt install openjdk-8-jdk -y
+```
+
+5. Go to the Jenkins [website](https://www.jenkins.io/doc/book/installing/linux/) and see the latest installation steps according to your operating system.
+
+```bash
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+```
+
+6. Run the follwing commands
+
+```bash
+systemctl status jenkins
+systemctl is-enabled jenkins
+ps -ef | grep jenkins
+ss -tunpl | grep 8080
+```
+
+Copy the Pulic Ip and paste in Browser with "IP:8080" and setup the rest jenkins according to your need.
