@@ -5,3 +5,12 @@ Jenkins is a Java-based open-source automation tool with built-in continuous int
 Organizations can use Jenkins to automate and speed up the software development process. Jenkins combines all stages of the development lifecycle, including build, document, test, package, stage, deploy, static analysis, and many others.
 
 Plugins assist Jenkins in achieving Continuous Integration. DevOps stages can be integrated thanks to plugins. Installing the utility's plugins is necessary if you want to incorporate that tool. Git, Maven 2 projects, Amazon EC2, HTML publishers, etc. are a few examples.
+
+### Use Case:
+
+- Automates the pipeline setup with Jenkinsfile.
+- Jenkinsfile define stages in CI/CD pipeline.
+- Jenkinsfile is a text file with pipeline DSL Syntax.
+- There are two ways to define syntax:
+  - Syntax
+  - Declarative
